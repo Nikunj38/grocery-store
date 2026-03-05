@@ -3,7 +3,7 @@ from pymongo import MongoClient
 from datetime import datetime
 
 # Connect to MongoDB
-client = MongoClient("mongodb+srv://public:public@cluster0.mongodb.net/grocery_store?retryWrites=true&w=majority")
+MongoClient("mongodb+srv://public:public@cluster0.mongodb.net/grocery_store?retryWrites=true&w=majority")
 db = client["grocery_store"]
 inventory_col = db["inventory"]
 
