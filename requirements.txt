@@ -1,0 +1,6 @@
+flask
+pymongo
+gunicorn
+flask-limiter
+flask-talisman
+flask-wtf
