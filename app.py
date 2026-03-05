@@ -31,6 +31,7 @@ MONGO_URI = os.environ.get("MONGO_URI")
 client = MongoClient(MONGO_URI)
 db = client["grocery_store"]
 inventory_col = db["inventory"]
+feedback_col = db["feedback"]
 
 ADMIN_PASSWORD = "1234567@"
 LOW_STOCK_THRESHOLD = 5
@@ -311,6 +312,22 @@ def logout():
     session.pop("logged_in", None)
 
     return redirect(url_for("landing"))
+
+@app.route("/feedback", methods=["POST"])
+def feedback():
+
+    name = request.form.get("name")
+    message = request.form.get("message")
+    rating = request.form.get("rating")
+
+    feedback_col.insert_one({
+        "name": name,
+        "message": message,
+        "rating": int(rating),
+        "timestamp": datetime.now()
+    })
+
+    return redirect(url_for("index"))
 
 
 # =============================
