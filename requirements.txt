@@ -1,6 +1,5 @@
-flask
-pymongo
+Flask
+pymongo[srv]
+dnspython
+Werkzeug
 gunicorn
-flask-limiter
-flask-talisman
-flask-wtf
