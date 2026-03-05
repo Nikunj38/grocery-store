@@ -1,0 +1,51 @@
+[
+    {
+        "id": 0,
+        "item": "Apples (Kashmiri)",
+        "category": "Apple",
+        "stock": 50,
+        "size": "1kg"
+    },
+    {
+        "id": 1,
+        "item": "Apples (Green)",
+        "category": "Apple",
+        "stock": 10,
+        "size": "500g"
+    },
+    {
+        "id": 2,
+        "item": "Milk (Amul Full Cream)",
+        "category": "Milk",
+        "stock": 12,
+        "size": "1L"
+    },
+    {
+        "id": 3,
+        "item": "Milk (Mother Dairy Toned)",
+        "category": "Milk",
+        "stock": 20,
+        "size": "500ml"
+    },
+    {
+        "id": 4,
+        "item": "Flour (Ashirvaad Atta)",
+        "category": "Flour",
+        "stock": 6,
+        "size": "5kg"
+    },
+    {
+        "id": 5,
+        "item": "Flour (Fortune Chakki)",
+        "category": "Flour",
+        "stock": 15,
+        "size": "1kg"
+    },
+    {
+        "id": 6,
+        "item": "(Mini Cat)",
+        "category": "Flour",
+        "size": "5kg",
+        "stock": 20
+    }
+]

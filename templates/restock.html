@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restock List</title>
+    <style>
+        body { font-family: sans-serif; padding: 30px; line-height: 1.6; }
+        .no-print { margin-bottom: 20px; display: flex; gap: 15px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        .urgent { color: red; font-weight: bold; }
+        @media print { .no-print { display: none; } }
+    </style>
+</head>
+<body>
+    <div class="no-print">
+        <a href="/admin">← Back to Admin</a>
+        <button onclick="window.print()">Print This List</button>
+    </div>
+
+    <h2>📋 Restock Shopping List</h2>
+    <p>The following items are low in stock and need to be ordered.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Pack Size</th>
+                <th>Current Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.item }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.size }}</td>
+                <td class="{{ 'urgent' if item.stock == 0 }}">{{ item.stock }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    {% if not items %}
+    <p style="text-align: center; margin-top: 20px; color: green;">✅ All items are well-stocked!</p>
+    {% endif %}
+</body>
+</html>
