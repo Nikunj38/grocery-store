@@ -26,9 +26,9 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 # MongoDB
 # =============================
 
-client = MongoClient(
-    "mongodb+srv://groceryadmin:grocery123@cluster0.ba9oamp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-)
+MONGO_URI = os.environ.get("MONGO_URI")
+
+client = MongoClient(MONGO_URI)
 db = client["grocery_store"]
 inventory_col = db["inventory"]
 
