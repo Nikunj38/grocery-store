@@ -139,6 +139,15 @@ def admin():
         inventory_col.find({"stock": {"$lt": LOW_STOCK_THRESHOLD}})
     )
 
+    # analytics
+    total_products = inventory_col.count_documents({})
+    categories = inventory_col.distinct("category")
+    total_categories = len(categories)
+
+    total_inventory_value = 0
+    for item in inventory_col.find({}):
+        total_inventory_value += item["price"] * item["stock"]
+
     return render_template(
         "admin.html",
         items=items,
@@ -147,6 +156,11 @@ def admin():
         total_pages=total_pages,
         q=q,
         threshold=LOW_STOCK_THRESHOLD,
+
+        total_products=total_products,
+        total_categories=total_categories,
+        total_inventory_value=total_inventory_value,
+        low_stock_count=len(low_stock)
     )
 
 
