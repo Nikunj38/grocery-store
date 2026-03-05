@@ -164,6 +164,8 @@ def admin():
         total_categories=total_categories,
         total_inventory_value=total_inventory_value,
         low_stock_count=len(low_stock)
+
+        feedback_list=feedback_list
     )
 
 
