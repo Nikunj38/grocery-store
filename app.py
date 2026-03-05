@@ -149,6 +149,8 @@ def admin():
     for item in inventory_col.find({}):
         total_inventory_value += item["price"] * item["stock"]
 
+    feedback_list = list(feedback_col.find().sort("timestamp", -1))
+
     return render_template(
         "admin.html",
         items=items,

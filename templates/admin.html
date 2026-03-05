@@ -310,5 +310,34 @@
         f.style.display = f.style.display === "block" ? "none" : "block";
       }
     </script>
+
+    <hr style="margin-top: 40px" />
+
+    <h2>⭐ Customer Reviews</h2>
+
+    {% if feedback_list %}
+    <div style="display: grid; gap: 15px; margin-top: 20px">
+      {% for fb in feedback_list %}
+      <div
+        style="
+          background: white;
+          padding: 15px;
+          border-radius: 12px;
+          border: 1px solid #eee;
+        "
+      >
+        <strong>{{ fb.name }}</strong>
+        <span style="color: #f39c12">⭐ {{ fb.rating }}/5</span>
+
+        <p style="margin-top: 8px">{{ fb.message }}</p>
+
+        <small style="color: #888">{{ fb.timestamp }}</small>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% else %}
+    <p>No feedback yet.</p>
+    {% endif %}
   </body>
 </html>
