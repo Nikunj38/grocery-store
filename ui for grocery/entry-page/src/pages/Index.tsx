@@ -99,8 +99,8 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="text-5xl md:text-8xl font-display font-black tracking-tight text-foreground leading-none"
             >
-              Fresh
-              <span className="text-primary">Cart</span>
+              Arya
+              <span className="text-primary">FoodMart</span>
             </motion.h1>
           )}
         </AnimatePresence>
